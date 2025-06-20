@@ -1,0 +1,154 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+}
+
+h1 {
+    color: #555;
+}
+
+#mesas-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.mesa {
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mesa h2 {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #666;
+}
+
+.cadeira-wrapper {
+    position: absolute;
+    /* Posição das cadeiras ao redor da mesa */
+}
+
+.cadeira {
+    width: 40px;
+    height: 40px;
+    background-color: #4CAF50; /* Verde - Disponível */
+    border: 1px solid #388E3C;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8em;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cadeira.ocupada {
+    background-color: #f44336; /* Vermelho - Ocupada */
+    border-color: #D32F2F;
+    cursor: not-allowed;
+}
+
+.cadeira:hover:not(.ocupada) {
+    background-color: #66BB6A;
+}
+
+/* Posicionamento das 8 cadeiras (exemplo) */
+/* Você pode ajustar isso para um layout circular melhor */
+.mesa .cadeira:nth-child(1) { top: 10px; left: 50%; transform: translateX(-50%); }
+.mesa .cadeira:nth-child(2) { top: 50%; right: 10px; transform: translateY(-50%); }
+.mesa .cadeira:nth-child(3) { bottom: 10px; right: 50%; transform: translateX(50%); }
+.mesa .cadeira:nth-child(4) { bottom: 50%; left: 10px; transform: translateY(50%); }
+.mesa .cadeira:nth-child(5) { top: 30px; left: 30px; }
+.mesa .cadeira:nth-child(6) { top: 30px; right: 30px; }
+.mesa .cadeira:nth-child(7) { bottom: 30px; left: 30px; }
+.mesa .cadeira:nth-child(8) { bottom: 30px; right: 30px; }
+
+
+/* Modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 500px;
+    border-radius: 8px;
+    position: relative;
+    text-align: left;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#reserva-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#reserva-form input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#reserva-form button {
+    background-color: #5cb85c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#reserva-form button:hover {
+    background-color: #4cae4c;
+}
+
+#modal-message {
+    margin-top: 15px;
+    color: red;
+    font-weight: bold;
+}

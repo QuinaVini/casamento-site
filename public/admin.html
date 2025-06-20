@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração de Cadeiras - Casamento</title>
+    <link rel="stylesheet" href="style.css"> <style>
+        /* Estilos básicos para o admin - adicione ao style.css ou crie admin.css */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+        }
+        h1, h2 {
+            color: #555;
+        }
+        #admin-container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .admin-section {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            text-align: left;
+        }
+        .admin-section h3 {
+            margin-top: 0;
+            color: #444;
+        }
+        .admin-section label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .admin-section input[type="text"],
+        .admin-section input[type="number"] {
+            width: calc(100% - 22px);
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .admin-section button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .admin-section button:hover {
+            background-color: #0056b3;
+        }
+        #admin-cadeiras-list {
+            margin-top: 20px;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        #admin-cadeiras-list th, #admin-cadeiras-list td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        #admin-cadeiras-list th {
+            background-color: #f2f2f2;
+        }
+        .liberar-button {
+            background-color: #dc3545;
+        }
+        .liberar-button:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Painel de Administração de Cadeiras</h1>
+
+    <div id="admin-container">
+        <div class="admin-section">
+            <h3>Liberar Cadeira por ID</h3>
+            <p>Use o ID da cadeira para liberá-la. Você pode encontrar o ID na tabela abaixo.</p>
+            <form id="liberar-form">
+                <label for="liberar-id">ID da Cadeira:</label>
+                <input type="number" id="liberar-id" required>
+                <button type="submit">Liberar Cadeira</button>
+                <p id="liberar-message"></p>
+            </form>
+        </div>
+
+        <div class="admin-section">
+            <h3>Adicionar Reserva Manualmente</h3>
+            <form id="adicionar-reserva-form">
+                <label for="adicionar-mesa">Mesa (Ex: A, B, C):</label>
+                <input type="text" id="adicionar-mesa" required>
+                <label for="adicionar-numero">Número da Cadeira (1-8):</label>
+                <input type="number" id="adicionar-numero" min="1" max="8" required>
+                <label for="adicionar-convidado">Nome do Convidado:</label>
+                <input type="text" id="adicionar-convidado" required>
+                <button type="submit">Adicionar Reserva</button>
+                <p id="adicionar-message"></p>
+            </form>
+        </div>
+
+        <div class="admin-section">
+            <h3>Visão Geral das Cadeiras</h3>
+            <table id="admin-cadeiras-list">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Mesa</th>
+                        <th>Cadeira</th>
+                        <th>Ocupada</th>
+                        <th>Convidado</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

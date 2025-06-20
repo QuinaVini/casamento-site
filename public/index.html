@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha sua Cadeira - Nosso Casamento</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Escolha sua Cadeira</h1>
+    <p>Clique em uma cadeira disponível para fazer sua reserva. As cadeiras em verde estão disponíveis.</p>
+
+    <div id="mesas-container">
+        </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Reservar Cadeira <span id="cadeira-selecionada-info"></span></h2>
+            <form id="reserva-form">
+                <label for="nome-convidado">Seu Nome:</label>
+                <input type="text" id="nome-convidado" required>
+                <button type="submit">Confirmar Reserva</button>
+            </form>
+            <p id="modal-message"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
